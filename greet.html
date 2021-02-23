@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta lang="en-US">
+        <title>Greetings User!</title>
+    </head>
+    <body> 
+        <style>
+            #name {
+                color:darkred;
+                font-size: large;
+                margin-left: 40%;
+                margin-top: 20%;
+            }
+            #submitName{
+                margin-left: 42.5%;
+                border-radius: 45%;
+                width: 120px;
+                height: 40px;
+                background-color: darkseagreen;
+                font-size: 22px;
+                color:rgb(73, 67, 73)
+            }
+            h1 {
+                
+                color:darkgreen;
+                text-align: center;
+            }
+            body {
+                background-color: rgb(248, 246, 100);
+            }
+        </style>
+        <h1>Type your name to get a personal greeting!</h1>
+        <form>
+            <script>
+                function greetPerson(greeting) {
+                    let x = document.getElementById('name').value
+                    alert('Greetings ' + x + '!');                
+                }
+            </script>
+            <label for="name"></label>
+            <input type="text" id="name" placeholder="Type your name here..." ><br>
+            <label for="submitName"></label>
+            <input type="button" id="submitName" value="Submit!" onclick='greetPerson()'>
+        </form>
+    </body>
+    </html>
