@@ -1,48 +1,83 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta lang="en-US">
-        <title>Greetings User!</title>
-    </head>
-    <body> 
-        <style>
-            #name {
-                color:darkred;
-                font-size: large;
-                margin-left: 40%;
-                margin-top: 20%;
-            }
-            #submitName{
-                margin-left: 42.5%;
-                border-radius: 45%;
-                width: 120px;
-                height: 40px;
-                background-color: darkseagreen;
-                font-size: 22px;
-                color:rgb(73, 67, 73)
-            }
-            h1 {
-                
-                color:darkgreen;
-                text-align: center;
-            }
-            body {
-                background-color: rgb(248, 246, 100);
-            }
-        </style>
-        <h1>Type your name to get a personal greeting!</h1>
-        <form>
-            <script>
-                function greetPerson(greeting) {
-                    let x = document.getElementById('name').value
-                    alert('Greetings ' + x + '!');                
-                }
-            </script>
-            <label for="name"></label>
-            <input type="text" id="name" placeholder="Type your name here..." ><br>
-            <label for="submitName"></label>
-            <input type="button" id="submitName" value="Submit!" onclick='greetPerson()'>
-        </form>
-    </body>
-    </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Triangles Here!</title>
+    <style>
+        button {
+            width: 200px;
+            height: 35px;
+            border-color: dimgray;
+            display: inline-block;
+            padding: 0px;
+            margin: -4px;
+            margin-bottom: 35px;
+
+        }
+        input {
+            width: 390px;
+            margin-left: 33%;
+        }
+        button#calca {
+            margin-left: 33%;
+        }
+        input#sidec {
+            margin-bottom: 5px;
+        }
+        input#sidea {
+            margin-top: 30px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h3 {
+            margin-left: 33%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+        function calculateArea() {
+            let a = sidea.value;
+            let b = sideb.value;
+            let c = sidec.value;
+            let s = ((a + b + c)/2);
+            let resa = Math.sqrt(s*((s - a)*(s - b)*(s - c)));
+            resulta.innerHTML = resa + " cm<sup>2</sup>";
+        }
+
+        function calculatePerimeter() {
+             let a = sidea.value;
+             let b = sideb.value;
+             let c = sidec.value;
+             let resp = a + b + c;
+
+            resulta.innerHTML = resp + " cm";
+        }
+
+    </script>
+
+    <h1>Calculating the area and the perimeter<br> of a triangle by given side length.</h1>
+
+    <input type="number" id="sidea"><br>
+
+    <input type="number" id="sideb"><br>
+
+    <input type="number" id="sidec"><br>
+    
+
+    <button type="button" id="calca" name="calca" onclick="calculateArea()" >Calculate Area!</button>
+    <button type="button" id="calcp" name="calcp" onclick="calculatePerimeter()" >Calculate Perimeter!</button>
+
+    <h3>The area of the triangle is: <span id="resulta"></span></h3>
+    <h3>The perimeter of the triangle is: <span id="resultp"></span> </h3>
+
+
+    
+
+
+</body>
+</html>
